@@ -7,7 +7,7 @@
 <meta name="description" content="LunaStore - Productos importados USA-Venezuela y bisutería. Envíos nacionales e internacionales. Pide directo por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230d0b1e'/><circle cx='29' cy='34' r='22' fill='%23e8c780'/><circle cx='39' cy='27' r='21' fill='%230d0b1e'/><circle cx='48' cy='14' r='3' fill='%23e8c780'/></svg>">
 <style>
   :root{
     --bg: #0d0b1e;
@@ -31,6 +31,8 @@
   a{text-decoration:none;color:inherit;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  svg.sprite{position:absolute; width:0; height:0; overflow:hidden;}
+  svg.art{display:block; width:100%; height:100%;}
 
   /* Background stars */
   body::before{
@@ -65,8 +67,9 @@
   .logo{
     font-size:1.5rem; font-weight:700; letter-spacing:.5px;
     color:var(--gold);
-    display:flex; align-items:center; gap:8px;
+    display:flex; align-items:center; gap:10px;
   }
+  .logo .mark{width:1.15em; height:1.15em; flex:none;}
   .nav-links{
     display:flex; gap:36px; list-style:none;
   }
@@ -84,7 +87,8 @@
     white-space:nowrap;
   }
   .nav-cta:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(232,199,128,.25);}
-  .burger{display:none; font-size:1.6rem; color:var(--gold); background:none; border:none; cursor:pointer;}
+  .burger{display:none; color:var(--gold); background:none; border:none; cursor:pointer; padding:4px;}
+  .burger svg{width:26px; height:26px;}
 
   /* Hero */
   .hero{
@@ -94,7 +98,7 @@
     display:flex; flex-direction:column; align-items:center;
   }
   .moon-badge{
-    font-size:3.2rem;
+    width:104px; height:104px; flex:none;
     margin-bottom:18px;
     filter: drop-shadow(0 0 25px rgba(232,199,128,.5));
     animation: float 5s ease-in-out infinite;
@@ -145,7 +149,9 @@
     padding:34px 20px; text-align:center; transition:transform .3s, border-color .3s;
   }
   .cat-card:hover{transform:translateY(-6px); border-color:var(--gold);}
-  .cat-card .icon{font-size:2.2rem; margin-bottom:14px;}
+  .cat-card .icon{display:flex; justify-content:center; margin-bottom:16px; color:var(--gold);}
+  .cat-card .icon svg{width:48px; height:48px; transition:transform .3s;}
+  .cat-card:hover .icon svg{transform:scale(1.08);}
   .cat-card h3{font-size:1.05rem; font-weight:600; margin-bottom:6px;}
   .cat-card p{color:var(--text-dim); font-size:.85rem;}
 
@@ -157,10 +163,19 @@
   }
   .product-card:hover{transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,.35);}
   .product-img{
-    height:190px; display:flex; align-items:center; justify-content:center; font-size:3.4rem;
+    height:190px; display:flex; align-items:center; justify-content:center;
     background: linear-gradient(135deg, #241f45, #171331);
-    position:relative;
+    position:relative; overflow:hidden; color:var(--gold);
   }
+  .product-img::before{
+    content:""; position:absolute; inset:0;
+    background: radial-gradient(circle at 50% 46%, rgba(232,199,128,.14), transparent 64%);
+  }
+  .product-img svg{
+    width:142px; height:142px; position:relative;
+    transition:transform .35s ease;
+  }
+  .product-card:hover .product-img svg{transform:scale(1.07);}
   .product-tag{
     position:absolute; top:12px; left:12px; background:var(--gold); color:#1a1420;
     font-size:.7rem; font-weight:700; padding:4px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.5px;
@@ -179,8 +194,10 @@
   .about-visual{
     background: linear-gradient(160deg, #241f45, #14112a);
     border:1px solid var(--border); border-radius:24px;
-    height:380px; display:flex; align-items:center; justify-content:center; font-size:6rem;
+    height:380px; display:flex; align-items:center; justify-content:center;
+    overflow:hidden; padding:20px;
   }
+  .about-visual svg{width:100%; height:100%;}
   .about-text .eyebrow{color:var(--gold); text-transform:uppercase; letter-spacing:3px; font-size:.78rem; font-weight:600; display:block; margin-bottom:16px;}
   .about-text h2{font-size:clamp(1.8rem,3vw,2.4rem); margin-bottom:18px; font-weight:700;}
   .about-text p{color:var(--text-dim); line-height:1.8; margin-bottom:26px;}
@@ -218,16 +235,18 @@
   }
   .contact-card h3{margin-bottom:18px; font-size:1.3rem;}
   .contact-item{display:flex; gap:14px; align-items:flex-start; margin-bottom:20px;}
-  .contact-item .ic{font-size:1.4rem;}
+  .contact-item .ic{display:flex; color:var(--gold); padding-top:2px;}
+  .contact-item .ic svg{width:22px; height:22px;}
   .contact-item strong{display:block; margin-bottom:2px;}
   .contact-item span, .contact-item a{color:var(--text-dim); font-size:.9rem;}
   .contact-item a:hover{color:var(--gold);}
   .social-row{display:flex; gap:14px; margin-top:20px;}
   .social-row a{
     width:42px; height:42px; border-radius:50%; border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center; font-size:1.1rem;
-    transition:background .25s, border-color .25s;
+    display:flex; align-items:center; justify-content:center; color:var(--gold);
+    transition:background .25s, border-color .25s, color .25s;
   }
+  .social-row a svg{width:18px; height:18px;}
   .social-row a:hover{background:var(--gold); color:#1a1420; border-color:var(--gold);}
 
   form.contact-form{display:flex; flex-direction:column; gap:16px;}
@@ -255,9 +274,10 @@
     position:fixed; bottom:26px; right:26px; z-index:200;
     width:58px; height:58px; border-radius:50%;
     background:#25D366; display:flex; align-items:center; justify-content:center;
-    font-size:1.7rem; box-shadow:0 8px 24px rgba(37,211,102,.4);
+    color:#fff; box-shadow:0 8px 24px rgba(37,211,102,.4);
     transition:transform .25s;
   }
+  .whatsapp-float svg{width:30px; height:30px;}
   .whatsapp-float:hover{transform:scale(1.08);}
 
   @media (max-width: 900px){
@@ -266,18 +286,215 @@
     .categories, .products-grid{grid-template-columns:repeat(2,1fr);}
     .about, .contact-grid{grid-template-columns:1fr;}
     .testimonials-grid{grid-template-columns:1fr;}
-    .about-visual{height:260px; font-size:4rem;}
+    .about-visual{height:260px; padding:12px;}
   }
   @media (max-width: 520px){
     .categories, .products-grid{grid-template-columns:1fr;}
+    .moon-badge{width:84px; height:84px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .moon-badge{animation:none;}
+    .product-img svg, .cat-card .icon svg{transition:none;}
   }
 </style>
 </head>
 <body>
 
+<!-- ===== LunaStore artwork sprite: brand mark, icons e ilustraciones de producto ===== -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f8e6bd"/>
+    <stop offset=".55" stop-color="#e8c780"/>
+    <stop offset="1" stop-color="#b08f4d"/>
+  </linearGradient>
+  <linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e8c780" stop-opacity=".26"/>
+    <stop offset="1" stop-color="#e8c780" stop-opacity=".05"/>
+  </linearGradient>
+  <radialGradient id="g-halo" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#e8c780" stop-opacity=".22"/>
+    <stop offset=".65" stop-color="#e8c780" stop-opacity=".05"/>
+    <stop offset="1" stop-color="#e8c780" stop-opacity="0"/>
+  </radialGradient>
+  <mask id="m-moon" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+    <circle cx="30" cy="34" r="26" fill="#fff"/>
+    <circle cx="41" cy="27" r="25" fill="#000"/>
+  </mask>
+  <mask id="m-moon-lg" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="320">
+    <circle cx="160" cy="152" r="64" fill="#fff"/>
+    <circle cx="177" cy="141" r="62" fill="#000"/>
+  </mask>
+</defs>
+
+<!-- Marca: luna creciente + destellos -->
+<symbol id="luna-mark" viewBox="0 0 64 64">
+  <circle cx="30" cy="34" r="26" fill="url(#g-gold)" mask="url(#m-moon)"/>
+  <path d="M52 4c.7 4.6 1.7 5.6 6.3 6.3-4.6.7-5.6 1.7-6.3 6.3-.7-4.6-1.7-5.6-6.3-6.3C50.3 9.6 51.3 8.6 52 4Z" fill="url(#g-gold)"/>
+  <path d="M14 7c.5 3.2 1.2 3.9 4.4 4.4-3.2.5-3.9 1.2-4.4 4.4-.5-3.2-1.2-3.9-4.4-4.4C12.8 10.9 13.5 10.2 14 7Z" fill="#e8c780" opacity=".7"/>
+</symbol>
+
+<!-- ===== Iconos de categoría ===== -->
+<symbol id="i-ring" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="32" cy="40" rx="15" ry="16" fill="url(#g-glass)"/>
+  <ellipse cx="32" cy="40" rx="9" ry="10" opacity=".55"/>
+  <path d="M32 5 43 16 32 27 21 16Z" fill="url(#g-glass)"/>
+  <path d="M21 16h22M32 5v22" opacity=".7"/>
+</symbol>
+
+<symbol id="i-perfume" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="19" y="25" width="26" height="32" rx="8" fill="url(#g-glass)"/>
+  <path d="M27 25v-7h10v7"/>
+  <rect x="25" y="8" width="14" height="8" rx="4" fill="url(#g-glass)"/>
+  <path d="M19 43h26" opacity=".5"/>
+  <circle cx="50" cy="13" r="1.7" fill="currentColor" stroke="none"/>
+  <circle cx="56" cy="8" r="1.3" fill="currentColor" stroke="none"/>
+  <circle cx="57" cy="19" r="1.3" fill="currentColor" stroke="none"/>
+</symbol>
+
+<symbol id="i-handbag" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14 24h36l-3.4 30a4 4 0 0 1-4 3.6H21.4a4 4 0 0 1-4-3.6Z" fill="url(#g-glass)"/>
+  <path d="M24 24v-5a8 8 0 0 1 16 0v5"/>
+  <path d="M27 35c0 4.5 2.2 7 5 7s5-2.5 5-7" opacity=".7"/>
+</symbol>
+
+<symbol id="i-import" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M32 6 55 18v28L32 58 9 46V18Z" fill="url(#g-glass)"/>
+  <path d="M9 18 32 30 55 18M32 30v28"/>
+  <path d="M20.5 12 44 24v9" opacity=".6"/>
+</symbol>
+
+<!-- ===== Iconos de contacto y redes ===== -->
+<symbol id="i-pin" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M32 58s18-16.5 18-30a18 18 0 0 0-36 0c0 13.5 18 30 18 30Z" fill="url(#g-glass)"/>
+  <circle cx="32" cy="27" r="7"/>
+</symbol>
+
+<symbol id="i-clock" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="32" cy="32" r="24" fill="url(#g-glass)"/>
+  <path d="M32 17v15.5L42.5 39"/>
+</symbol>
+
+<symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/>
+</symbol>
+
+<symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.5"/>
+  <circle cx="12" cy="12" r="4.6"/>
+  <circle cx="17.4" cy="6.6" r="1.25" fill="currentColor" stroke="none"/>
+</symbol>
+
+<symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor">
+  <path d="M13.6 21.2v-8.4h2.8l.42-3.26H13.6V7.46c0-.94.26-1.58 1.61-1.58h1.72V2.96a23 23 0 0 0-2.5-.13c-2.48 0-4.18 1.51-4.18 4.29v2.42H7.44v3.26h2.81v8.4z"/>
+</symbol>
+
+<symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+  <path d="M4 7h16M4 12h16M4 17h16"/>
+</symbol>
+
+<!-- ===== Ilustraciones de producto ===== -->
+<symbol id="p-bracelet" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="60" cy="52" rx="34" ry="30" fill="url(#g-glass)"/>
+  <ellipse cx="60" cy="52" rx="26" ry="22" opacity=".6"/>
+  <circle cx="60" cy="22" r="5" fill="url(#g-glass)"/>
+  <circle cx="34" cy="45" r="3.6" fill="url(#g-glass)"/>
+  <circle cx="86" cy="45" r="3.6" fill="url(#g-glass)"/>
+  <path d="M60 82v7"/>
+  <path d="M60 89c-4.6 0-7.6 3.4-7.6 7.6 0 5.6 7.6 10.4 7.6 10.4s7.6-4.8 7.6-10.4c0-4.2-3-7.6-7.6-7.6Z" fill="url(#g-glass)"/>
+  <path d="M40 77v6"/>
+  <circle cx="40" cy="89" r="5.6" fill="url(#g-glass)"/>
+  <path d="M80 77v5"/>
+  <path d="m80 82 2.6 5.3 5.8.9-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.9z" fill="url(#g-glass)"/>
+</symbol>
+
+<symbol id="p-rings" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="44" cy="70" rx="27" ry="29" fill="url(#g-glass)"/>
+  <ellipse cx="44" cy="70" rx="19" ry="21" opacity=".6"/>
+  <ellipse cx="78" cy="62" rx="23" ry="25" fill="url(#g-glass)"/>
+  <ellipse cx="78" cy="62" rx="16" ry="18" opacity=".6"/>
+  <path d="M78 15 88 26 78 37 68 26Z" fill="url(#g-glass)"/>
+  <path d="M68 26h20M78 15v22" opacity=".65"/>
+</symbol>
+
+<symbol id="p-handbag" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M22 40h76l-7 54a8 8 0 0 1-8 7H37a8 8 0 0 1-8-7Z" fill="url(#g-glass)"/>
+  <path d="M43 40V29a17 17 0 0 1 34 0v11"/>
+  <path d="M31 55h58" opacity=".4"/>
+  <path d="M49 60c0 8 4.9 12.5 11 12.5S71 68 71 60" opacity=".75"/>
+</symbol>
+
+<symbol id="p-watch" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M45 33 47 13h26l2 20" fill="url(#g-glass)"/>
+  <path d="M45 87 47 107h26l2-20" fill="url(#g-glass)"/>
+  <path d="M90.5 55h4a2.5 2.5 0 0 1 0 9h-4" opacity=".8"/>
+  <circle cx="60" cy="60" r="30" fill="url(#g-glass)"/>
+  <circle cx="60" cy="60" r="23" opacity=".5"/>
+  <path d="M60 44v16l11 7"/>
+</symbol>
+
+<symbol id="p-splash" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="47" y="8" width="26" height="14" rx="5" fill="url(#g-glass)"/>
+  <path d="M51 30v-8h18v8" opacity=".85"/>
+  <path d="M50 30c0 8-14 12-14 26v34a14 14 0 0 0 14 14h20a14 14 0 0 0 14-14V56c0-14-14-18-14-26Z" fill="url(#g-glass)"/>
+  <rect x="45" y="66" width="30" height="20" rx="3" opacity=".55"/>
+  <path d="M51 76h18" opacity=".4"/>
+</symbol>
+
+<symbol id="p-mist" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="36" y="34" width="42" height="74" rx="12" fill="url(#g-glass)"/>
+  <path d="M50 34v-9h14v9"/>
+  <rect x="45" y="11" width="24" height="14" rx="4" fill="url(#g-glass)"/>
+  <path d="M69 18h9" opacity=".85"/>
+  <path d="M36 76h42" opacity=".4"/>
+  <circle cx="88" cy="18" r="2.4" fill="currentColor" stroke="none"/>
+  <circle cx="98" cy="10" r="1.8" fill="currentColor" stroke="none" opacity=".8"/>
+  <circle cx="100" cy="24" r="1.8" fill="currentColor" stroke="none" opacity=".8"/>
+  <circle cx="92" cy="32" r="1.4" fill="currentColor" stroke="none" opacity=".6"/>
+</symbol>
+
+<symbol id="p-sunglasses" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14 46h92"/>
+  <path d="M20 46h34v12c0 12-7 20-17 20s-17-8-17-20Z" fill="url(#g-glass)"/>
+  <path d="M66 46h34v12c0 12-7 20-17 20s-17-8-17-20Z" fill="url(#g-glass)"/>
+  <path d="M54 52c2-2.4 10-2.4 12 0"/>
+  <path d="m14 46-7 7M106 46l7 7"/>
+</symbol>
+
+<symbol id="p-shirt" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M46 22 60 32 74 22l18 8a8 8 0 0 1 5 8l-4 18-12-3v43a4 4 0 0 1-4 4H45a4 4 0 0 1-4-4V53l-12 3-4-18a8 8 0 0 1 5-8Z" fill="url(#g-glass)"/>
+  <path d="M46 22 60 40 74 22"/>
+  <path d="M60 40v8" opacity=".5"/>
+  <path d="M65 58h12v13H65z" opacity=".5"/>
+</symbol>
+
+<!-- ===== Escena decorativa "Nosotros" ===== -->
+<symbol id="art-about" viewBox="0 0 320 320">
+  <circle cx="160" cy="152" r="150" fill="url(#g-halo)"/>
+  <circle cx="160" cy="152" r="132" fill="none" stroke="#e8c780" stroke-opacity=".16" stroke-width="1.5" stroke-dasharray="3 11"/>
+  <circle cx="160" cy="152" r="100" fill="none" stroke="#e8c780" stroke-opacity=".22" stroke-width="1.5"/>
+  <g mask="url(#m-moon-lg)">
+    <circle cx="160" cy="152" r="64" fill="url(#g-gold)"/>
+    <circle cx="134" cy="186" r="11" fill="#14112a" opacity=".16"/>
+    <circle cx="150" cy="211" r="6" fill="#14112a" opacity=".13"/>
+    <circle cx="122" cy="146" r="5" fill="#14112a" opacity=".13"/>
+  </g>
+  <path d="M243 60c1.1 7.4 2.7 9 10.1 10.1-7.4 1.1-9 2.7-10.1 10.1-1.1-7.4-2.7-9-10.1-10.1 7.4-1.1 9-2.7 10.1-10.1Z" fill="url(#g-gold)"/>
+  <path d="M62 74c.8 5.3 1.9 6.4 7.2 7.2-5.3.8-6.4 1.9-7.2 7.2-.8-5.3-1.9-6.4-7.2-7.2 5.3-.8 6.4-1.9 7.2-7.2Z" fill="#e8c780" opacity=".8"/>
+  <path d="M228 238c.7 4.4 1.6 5.3 6 6-4.4.7-5.3 1.6-6 6-.7-4.4-1.6-5.3-6-6 4.4-.7 5.3-1.6 6-6Z" fill="#e8c780" opacity=".7"/>
+  <circle cx="88" cy="46" r="2.6" fill="#e8c780" opacity=".75"/>
+  <circle cx="272" cy="132" r="3" fill="#e8c780" opacity=".6"/>
+  <circle cx="256" cy="196" r="2.2" fill="#e8c780" opacity=".5"/>
+  <circle cx="46" cy="184" r="2.6" fill="#e8c780" opacity=".55"/>
+  <circle cx="74" cy="256" r="3" fill="#e8c780" opacity=".45"/>
+  <circle cx="180" cy="284" r="2.2" fill="#e8c780" opacity=".5"/>
+  <circle cx="196" cy="34" r="2.2" fill="#e8c780" opacity=".45"/>
+</symbol>
+</svg>
+
 <header>
   <nav class="wrap">
-    <a href="#" class="logo">🌙 LunaStore</a>
+    <a href="#" class="logo"><svg class="mark" aria-hidden="true"><use href="#luna-mark"/></svg> LunaStore</a>
     <ul class="nav-links">
       <li><a href="#categorias">Categorías</a></li>
       <li><a href="#productos">Productos</a></li>
@@ -285,12 +502,12 @@
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <a class="nav-cta" href="https://wa.me/584249533311" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-    <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <button class="burger" aria-label="Abrir menú" onclick="document.querySelector('.nav-links').classList.toggle('open')"><svg class="art" aria-hidden="true"><use href="#i-menu"/></svg></button>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="moon-badge">🌙</div>
+  <div class="moon-badge"><svg class="art" aria-hidden="true"><use href="#luna-mark"/></svg></div>
   <p class="eyebrow">Productos & Bisutería · Maturín, Venezuela</p>
   <h1>La magia está en los detalles</h1>
   <p class="sub">Productos importados USA-Venezuela y bisutería seleccionada con cuidado: perfumes, relojes, carteras, lentes y accesorios en oro y acero inoxidable. Envíos nacionales e internacionales.</p>
@@ -309,22 +526,22 @@
     </div>
     <div class="categories">
       <div class="cat-card">
-        <div class="icon">💍</div>
+        <div class="icon"><svg class="art" aria-hidden="true"><use href="#i-ring"/></svg></div>
         <h3>Bisutería</h3>
         <p>Anillos, pulseras y collares</p>
       </div>
       <div class="cat-card">
-        <div class="icon">🌸</div>
+        <div class="icon"><svg class="art" aria-hidden="true"><use href="#i-perfume"/></svg></div>
         <h3>Perfumería</h3>
         <p>Splash y body mist originales</p>
       </div>
       <div class="cat-card">
-        <div class="icon">👜</div>
+        <div class="icon"><svg class="art" aria-hidden="true"><use href="#i-handbag"/></svg></div>
         <h3>Carteras y relojes</h3>
         <p>Marcas importadas</p>
       </div>
       <div class="cat-card">
-        <div class="icon">🛍️</div>
+        <div class="icon"><svg class="art" aria-hidden="true"><use href="#i-import"/></svg></div>
         <h3>Compras USA</h3>
         <p>Gestión de encargos +7 años</p>
       </div>
@@ -341,7 +558,7 @@
     </div>
     <div class="products-grid">
       <div class="product-card">
-        <div class="product-img"><span class="product-tag">Nuevo</span>💍</div>
+        <div class="product-img"><span class="product-tag">Nuevo</span><svg class="art" aria-hidden="true"><use href="#p-bracelet"/></svg></div>
         <div class="product-info">
           <h3>Pulsera charms acero inoxidable</h3>
           <p class="price">Consultar precio</p>
@@ -349,7 +566,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-img">💫</div>
+        <div class="product-img"><svg class="art" aria-hidden="true"><use href="#p-rings"/></svg></div>
         <div class="product-info">
           <h3>Anillos bañados en oro</h3>
           <p class="price">Consultar precio</p>
@@ -357,7 +574,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-img"><span class="product-tag">Top</span>👜</div>
+        <div class="product-img"><span class="product-tag">Top</span><svg class="art" aria-hidden="true"><use href="#p-handbag"/></svg></div>
         <div class="product-info">
           <h3>Cartera Annie Klein</h3>
           <p class="price">Consultar precio</p>
@@ -365,7 +582,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-img">⌚</div>
+        <div class="product-img"><svg class="art" aria-hidden="true"><use href="#p-watch"/></svg></div>
         <div class="product-info">
           <h3>Reloj Curren original</h3>
           <p class="price">Consultar precio</p>
@@ -373,7 +590,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-img"><span class="product-tag">Nuevo</span>🌸</div>
+        <div class="product-img"><span class="product-tag">Nuevo</span><svg class="art" aria-hidden="true"><use href="#p-splash"/></svg></div>
         <div class="product-info">
           <h3>Splash Victoria's Secret</h3>
           <p class="price">Consultar precio</p>
@@ -381,7 +598,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-img">🧴</div>
+        <div class="product-img"><svg class="art" aria-hidden="true"><use href="#p-mist"/></svg></div>
         <div class="product-info">
           <h3>Body Mist Bath & Body Works</h3>
           <p class="price">Consultar precio</p>
@@ -389,7 +606,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-img">🕶️</div>
+        <div class="product-img"><svg class="art" aria-hidden="true"><use href="#p-sunglasses"/></svg></div>
         <div class="product-info">
           <h3>Lentes de sol originales</h3>
           <p class="price">Consultar precio</p>
@@ -397,7 +614,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-img">👕</div>
+        <div class="product-img"><svg class="art" aria-hidden="true"><use href="#p-shirt"/></svg></div>
         <div class="product-info">
           <h3>Camisa Náutica original</h3>
           <p class="price">Consultar precio</p>
@@ -410,7 +627,7 @@
 
 <section id="nosotros">
   <div class="wrap about">
-    <div class="about-visual">🌙</div>
+    <div class="about-visual"><svg class="art" aria-hidden="true"><use href="#art-about"/></svg></div>
     <div class="about-text">
       <span class="eyebrow">Sobre nosotros</span>
       <h2>Somos LunaStore</h2>
@@ -473,25 +690,25 @@
     <div class="contact-card">
       <h3>Información de contacto</h3>
       <div class="contact-item">
-        <span class="ic">📍</span>
+        <span class="ic"><svg class="art" aria-hidden="true"><use href="#i-pin"/></svg></span>
         <div><strong>Ubicación</strong><span>Maturín, Monagas, Venezuela</span></div>
       </div>
       <div class="contact-item">
-        <span class="ic">💬</span>
+        <span class="ic"><svg class="art" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
         <div><strong>WhatsApp</strong><a href="https://wa.me/584249533311" target="_blank" rel="noopener">+58 424-953-3311</a></div>
       </div>
       <div class="contact-item">
-        <span class="ic">📷</span>
+        <span class="ic"><svg class="art" aria-hidden="true"><use href="#i-instagram"/></svg></span>
         <div><strong>Instagram</strong><a href="https://www.instagram.com/lunastore_mat/" target="_blank" rel="noopener">@lunastore_mat</a></div>
       </div>
       <div class="contact-item">
-        <span class="ic">🕐</span>
+        <span class="ic"><svg class="art" aria-hidden="true"><use href="#i-clock"/></svg></span>
         <div><strong>Horario</strong><span>Lun - Sáb: 9:00am - 6:00pm</span></div>
       </div>
       <div class="social-row">
-        <a href="https://www.instagram.com/lunastore_mat/" target="_blank" rel="noopener">📷</a>
-        <a href="https://wa.me/584249533311" target="_blank" rel="noopener">💬</a>
-        <a href="#">📘</a>
+        <a href="https://www.instagram.com/lunastore_mat/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="art" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a href="https://wa.me/584249533311" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="art" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg class="art" aria-hidden="true"><use href="#i-facebook"/></svg></a>
       </div>
     </div>
     <div class="contact-card">
@@ -508,12 +725,12 @@
 
 <footer>
   <div class="footer-inner">
-    <a class="logo" style="font-size:1.2rem;">🌙 LunaStore</a>
+    <a class="logo" style="font-size:1.2rem;"><svg class="mark" aria-hidden="true"><use href="#luna-mark"/></svg> LunaStore</a>
     <p>&copy; 2026 LunaStore · Productos & Bisutería, Maturín. Todos los derechos reservados.</p>
   </div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/584249533311" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">💬</a>
+<a class="whatsapp-float" href="https://wa.me/584249533311" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp"><svg class="art" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
 
 <script>
   function sendToWhatsApp(e){
