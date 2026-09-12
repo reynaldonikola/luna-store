@@ -1,34 +1,13 @@
-# Dónde comimos en Disneyland (y qué recomendamos)
+# Recomendación de comida en Disneyland (mensaje para un amigo)
 
-## El desayuno, en el hotel
+Oye, te paso lo de la comida en Disneyland para que no andes averiguando.
 
-Nos funcionó mejor desayunar en el hotel antes de entrar al parque. Uno ya está ahí, no hay filas todavía, y los personajes pasan mesa por mesa mientras tú te tomas el café con calma. Adentro del parque eso no pasa: o comes rápido o pierdes media mañana formado.
+Nosotros desayunábamos en el buffet del hotel donde nos quedamos y la verdad así está bien: sales ya comido y no pierdes la mañana formado. Si van con niños y quieren la experiencia de los personajes, ahí sí vale la pena reservar una vez Goofy's Kitchen, que está en el Disneyland Hotel y sale Goofy con Minnie, Pluto y Chip y Dale, o el Storytellers Cafe del Grand Californian, que es lo mismo pero más tranquilo y con Mickey de explorador. Se apartan con tiempo y se pagan por adelantado, así que decídelo antes del viaje.
 
-- **Goofy's Kitchen** — Disneyland Hotel. Buffet, y salen Goofy, Minnie, Pluto, Chip y Dale. Es el más movido y el que más les gusta a los niños.
-- **Storytellers Cafe** — Disney's Grand Californian Hotel & Spa. Mismo plan pero más tranquilo, con Mickey vestido de explorador. Si prefieres desayunar sin tanto ruido, este.
+El lonche nosotros no lo planeamos: comíamos en la zona del parque donde anduviéramos en ese momento y funcionó bien, porque cruzar todo Disneyland para llegar a una reservación te mata el día. Lo que sí no te puedes perder es la zona de Star Wars, ahí la comida es rarísima a propósito y el ambiente se siente como si estuvieras dentro de la película. Fue lo más divertido del viaje, aunque sea pásate por algo de tomar.
 
-Los dos se reservan con anticipación y se pagan por adelantado. Vale la pena apartarlos antes del viaje.
+Si quieren sentarse a comer bien sin salir del parque, el Blue Bayou es el mejor: está adentro de Piratas del Caribe, comes a media luz junto al agua viendo pasar las barcas. Ese resérvalo apenas puedas porque se llena. A unos pasos está el Café Orleans, más informal y más barato, y el Carnation Cafe en Main Street si quieren algo sencillo y americano.
 
-## El lonche, donde te agarre el hambre
+Para la cena mejor salgan a Downtown Disney, que no pide boleto. Din Tai Fung es lo mejor de ahí, dumplings taiwaneses, pero apártalo temprano porque siempre está lleno. Naples es italiano y es lo seguro si van varios. Y están Paseo y Céntrico, que son del mismo chef y del mismo lugar: arriba es Paseo para sentarse a cenar y abajo Céntrico, más de barra y botanear. Quedan del lado que pega con el Grand Californian, así que si te hospedas ahí sales del hotel y ya estás.
 
-Esto no lo planeamos y salió bien: comíamos en el área del parque donde estuviéramos en ese momento, sin reservación ni andar cruzando todo Disneyland para llegar a un restaurante. Te ahorras la caminata y no pierdes el ritmo del día.
-
-La zona de **Star Wars (Galaxy's Edge)** fue la más divertida de todas. La comida es distinta, los nombres son raros a propósito y todo el ambiente se siente como si estuvieras dentro de la película. Aunque no tengas hambre, pásate aunque sea por algo de tomar.
-
-## Si quieres sentarte a comer bien, dentro del parque
-
-- **Blue Bayou** — está dentro de Piratas del Caribe, comes a oscuras junto al agua con las barcas pasando. Es el más bonito del parque y hay que reservarlo con tiempo.
-- **Café Orleans** — a unos pasos del Blue Bayou, más informal y más barato. Los monte cristo y las papas con queso son lo clásico de ahí.
-- **Carnation Cafe** — en Main Street, comida americana de siempre, buen lugar para sentarse un rato sin salir del parque.
-
-## La cena, afuera
-
-Downtown Disney no pide boleto, así que es la salida fácil para cerrar el día.
-
-- **Din Tai Fung** — dumplings taiwaneses. El mejor de la zona, y también el más solicitado: aparta desde temprano.
-- **Naples Ristorante e Bar** — italiano, pizza y pasta. Seguro y bueno para grupos.
-- **Céntrico y Paseo** — son del mismo chef y están en el mismo lugar: Paseo es la parte de arriba, para sentarse a cenar, y Céntrico es lo de abajo, más casual, de barra y botanear. Quedan del lado de Downtown Disney que pega con el Grand Californian, así que si te hospedas ahí sales del hotel y ya estás.
-
-## En resumen
-
-Desayuno con personajes en el hotel, lonche donde te toque dentro del parque, y cena afuera en Downtown Disney. Así no pierdes tiempo caminando de regreso por una reservación y alcanzas a ver todo.
+Cualquier cosa me escribes.
