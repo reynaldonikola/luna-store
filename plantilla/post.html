@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Publicación Luna Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Cinzel:wght@400;500&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root{ --noche:#1f4a5e; --profundo:#143241; --blush:#e3b39a;
+         --dorado:#a9822c; --crema:#faf6f2; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden;background:#0b1418;
+            font-family:'Poppins',sans-serif}
+
+  #lienzo{width:1080px;height:1350px;position:relative;overflow:hidden}
+
+  .escena{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* velo inferior para que el texto se lea sobre cualquier escena */
+  .velo{position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      rgba(11,20,24,.52) 0%,
+      rgba(11,20,24,.10) 22%,
+      rgba(11,20,24,0) 44%,
+      rgba(11,20,24,.62) 74%,
+      rgba(11,20,24,.92) 100%)}
+
+  .oro{background:linear-gradient(103deg,#8a6a1f 0%,#c8a13f 22%,#f2ddaa 40%,
+       #e8cf86 50%,#c8a13f 68%,#9c7826 86%,#d9bb63 100%);
+       -webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .marca{position:absolute;top:64px;left:0;right:0;text-align:center;
+    font-family:'Cinzel',serif;font-size:23px;letter-spacing:.56em;padding-left:.56em}
+
+  .hair{position:absolute;left:330px;right:330px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(232,207,134,.85),transparent)}
+
+  #bloque{position:absolute;bottom:0;left:0;right:0;padding:0 78px 64px;text-align:center}
+
+  #nombre{font-family:'Cormorant Garamond',serif;font-weight:400;
+    font-size:74px;line-height:1.04;color:#fdfaf7;
+    text-shadow:0 2px 20px rgba(0,0,0,.55)}
+  #nombre.largo{font-size:58px}
+  #nombre.muylargo{font-size:47px}
+
+  #detalle{margin-top:18px;font-size:20px;font-weight:200;letter-spacing:.3em;
+    color:rgba(250,246,242,.74);text-transform:uppercase}
+
+  .separador{margin:32px auto 0;width:420px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(232,207,134,.8),transparent)}
+
+  #precio{margin-top:26px;font-family:'Cormorant Garamond',serif;
+    font-size:64px;font-weight:500;line-height:1}
+
+  #pie{margin-top:22px;font-size:16px;font-weight:200;letter-spacing:.4em;
+    color:rgba(250,246,242,.5);text-transform:uppercase}
+</style>
+</head>
+<body>
+<div id="lienzo">
+  <img class="escena" id="escena" src="" alt="">
+  <div class="velo"></div>
+  <div class="marca oro">LUNA STORE</div>
+  <div class="hair" style="top:118px"></div>
+
+  <div id="bloque">
+    <div id="nombre"></div>
+    <div id="detalle"></div>
+    <div class="separador"></div>
+    <div id="precio" class="oro"></div>
+    <div id="pie">Maturín · Escríbenos por DM</div>
+  </div>
+</div>
+
+<script>
+  // Los datos llegan por querystring desde el renderizador.
+  const p = new URLSearchParams(location.search);
+  const nombre = p.get('nombre') || '';
+  const detalle = p.get('detalle') || '';
+  const precio = p.get('precio') || '';
+  const escena = p.get('escena') || '';
+
+  document.getElementById('escena').src = escena;
+  document.getElementById('detalle').textContent = detalle;
+  document.getElementById('precio').textContent = precio ? '$' + precio : '';
+
+  // El nombre se encoge por tramos para que nunca desborde ni se corte.
+  const elNombre = document.getElementById('nombre');
+  elNombre.textContent = nombre;
+  if (nombre.length > 34) elNombre.classList.add('muylargo');
+  else if (nombre.length > 20) elNombre.classList.add('largo');
+
+  // Señal para el renderizador: la escena ya cargó.
+  const img = document.getElementById('escena');
+  window.listo = false;
+  if (img.complete) { window.listo = true; }
+  else {
+    img.addEventListener('load', () => { window.listo = true; });
+    img.addEventListener('error', () => { window.listo = true; });
+  }
+</script>
+</body>
+</html>
