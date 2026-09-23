@@ -1297,3 +1297,94 @@ select:focus-visible {
     padding: 10px 14px;
   }
 }
+
+
+/* ---------------- Catálogo: precio, estado y CTA por producto ---------------- */
+
+.catalog-count {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a6771;
+  margin: -24px 0 28px;
+}
+
+.catalog-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #5a6771;
+  margin: 36px auto 0;
+  max-width: 620px;
+}
+
+.product-state {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 6px 11px;
+  border-radius: 999px;
+  color: var(--color-white);
+  background: var(--color-navy);
+}
+
+.product-state--disponible {
+  background: #2f7a5a;
+}
+
+.product-state--camino {
+  background: var(--color-gold);
+}
+
+.product-state--encargo {
+  background: var(--color-navy);
+}
+
+.product-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.product-meta .product-availability {
+  margin-bottom: 0;
+  font-size: 0.78rem;
+  color: #5a6771;
+  font-weight: 500;
+}
+
+.product-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--color-navy);
+  color: var(--color-navy);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+}
+
+.product-cta:hover,
+.product-cta:focus-visible {
+  background: var(--color-navy);
+  color: var(--color-white);
+}

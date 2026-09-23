@@ -37,6 +37,8 @@
   var filterButtons = Array.prototype.slice.call(document.querySelectorAll(".filter-btn"));
   var productCards = Array.prototype.slice.call(document.querySelectorAll(".product-card"));
   var noResults = document.getElementById("no-results");
+  var catalogCount = document.getElementById("catalog-count");
+  var totalProducts = productCards.length;
   var filterTimers = new WeakMap();
 
   function applyFilter(category) {
@@ -90,6 +92,11 @@
 
     if (noResults) {
       noResults.classList.toggle("is-visible", visibleCount === 0);
+    }
+
+    if (catalogCount) {
+      catalogCount.textContent =
+        "Mostrando " + visibleCount + " de " + totalProducts + " productos";
     }
   }
 
