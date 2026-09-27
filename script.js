@@ -2,7 +2,6 @@
   "use strict";
 
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   /* ---------------- Mobile navigation ---------------- */
   var navToggle = document.getElementById("nav-toggle");
@@ -14,10 +13,30 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
+    var closeNav = function () {
+      if (!mainNav.classList.contains("is-open")) {
+        return;
+      }
+      mainNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+
     mainNav.addEventListener("click", function (event) {
       if (event.target.tagName === "A") {
-        mainNav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
+        closeNav();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeNav();
+        navToggle.focus();
+      }
+    });
+
+    document.addEventListener("pointerdown", function (event) {
+      if (!mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+        closeNav();
       }
     });
   }
@@ -179,7 +198,7 @@
       var parent = el.parentElement;
       var count = parentCounters.get(parent) || 0;
       el.classList.add("reveal");
-      el.style.animationDelay = (count % 6) * 80 + "ms";
+      el.style.animationDelay = (count % 6) * 60 + "ms";
       parentCounters.set(parent, count + 1);
     });
 
@@ -198,57 +217,6 @@
     revealTargets.forEach(function (el) {
       revealObserver.observe(el);
     });
-  }
-
-  /* ---------------- Magnetic / luminous hover on primary CTAs ---------------- */
-  if (canHover && !prefersReducedMotion) {
-    var magneticButtons = Array.prototype.slice.call(document.querySelectorAll(".btn-primary"));
-
-    magneticButtons.forEach(function (btn) {
-      btn.addEventListener("mousemove", function (event) {
-        var rect = btn.getBoundingClientRect();
-        var relX = event.clientX - rect.left;
-        var relY = event.clientY - rect.top;
-        var px = (relX / rect.width) * 100;
-        var py = (relY / rect.height) * 100;
-        btn.style.setProperty("--mx", px + "%");
-        btn.style.setProperty("--my", py + "%");
-
-        var offsetX = ((relX / rect.width) - 0.5) * 8;
-        var offsetY = ((relY / rect.height) - 0.5) * 8;
-        btn.style.transform = "translate(" + offsetX + "px, " + (offsetY - 2) + "px)";
-      });
-
-      btn.addEventListener("mouseleave", function () {
-        btn.style.transform = "";
-      });
-    });
-  }
-
-  /* ---------------- Subtle hero parallax on scroll ---------------- */
-  var heroVisual = document.getElementById("hero-visual");
-
-  if (heroVisual && !prefersReducedMotion) {
-    var ticking = false;
-
-    var updateParallax = function () {
-      var offset = window.scrollY;
-      if (offset < window.innerHeight) {
-        heroVisual.style.transform = "translateY(" + offset * 0.12 + "px)";
-      }
-      ticking = false;
-    };
-
-    window.addEventListener(
-      "scroll",
-      function () {
-        if (!ticking) {
-          window.requestAnimationFrame(updateParallax);
-          ticking = true;
-        }
-      },
-      { passive: true }
-    );
   }
 
   /* ---------------- Footer year ---------------- */
