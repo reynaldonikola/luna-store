@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Luna Store | Catálogo de fragancias, accesorios y ropa — Maturín</title>
 <meta name="description" content="Catálogo de Luna Store (Maturín, Venezuela): 53 productos con foto y precio — fragancias Victoria's Secret, carteras, relojes, ropa y calzado originales, más importaciones a pedido desde Estados Unidos." />
-<meta name="theme-color" content="#ffffff" />
+<meta name="theme-color" content="#0a1920" />
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/web/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/logo/web/favicon-192.png" />
@@ -31,8 +31,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="assets/web/pulseras-estilo-pandora-02.jpg" fetchpriority="high" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -78,39 +77,53 @@
     <div class="container hero-inner">
       <div class="hero-content">
         <span class="eyebrow">Maturín, Venezuela</span>
-        <h1>Bisutería, fragancias e <em>importaciones</em> desde Estados Unidos.</h1>
+        <h1>Bisutería, accesorios e <em>importaciones</em> desde Estados Unidos, con trato personalizado</h1>
         <p>
           Más de 7 años ayudando a nuestros clientes a comprar en Amazon, Shein, Apple y otras tiendas
           de EE. UU., y a recibir sus pedidos en Venezuela sin complicaciones. Además, descubre nuestra
           colección propia de bisutería y accesorios.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
-          <a class="btn btn-outline-light" href="https://ig.me/m/lunastore_mat" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-primary" href="https://ig.me/m/lunastore_mat" target="_blank" rel="noopener noreferrer">
             Consultar por Instagram
           </a>
+          <a class="btn btn-outline-light" href="#catalogo">Ver catálogo</a>
         </div>
         <div class="hero-badges">
           <div class="hero-badge">
-            <strong>7+</strong>
-            años de experiencia
+            <div>
+              <strong>7+</strong>
+              años de experiencia
+            </div>
           </div>
           <div class="hero-badge">
-            <strong>USA → VE</strong>
-            compras e importación
+            <div>
+              <strong>USA → VE</strong>
+              gestión de compras e importación
+            </div>
           </div>
           <div class="hero-badge">
-            <strong>100%</strong>
-            productos originales
+            <div>
+              <strong>100%</strong>
+              productos originales
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="hero-visual" id="hero-visual">
+      <div class="hero-visual" id="hero-visual" aria-hidden="false">
         <figure>
-          <img src="assets/web/pulseras-estilo-pandora-02.jpg" alt="Pulseras estilo Pandora personalizadas con dijes, de Luna Store" loading="eager" fetchpriority="high" decoding="async" width="1170" height="2080" />
+          <img src="assets/web/pulseras-estilo-pandora-02.jpg" alt="Pulseras estilo Pandora personalizadas con dijes, de Luna Store" loading="eager" fetchpriority="high" width="1170" height="2080" />
+        </figure>
+        <figure>
+          <img src="assets/web/collar-fotograbado.jpg" alt="Collar con dije de fotograbado personalizado, uno de los productos de Luna Store" loading="lazy" width="640" height="1136" />
         </figure>
       </div>
+
+      <span class="scroll-cue" aria-hidden="true">
+        Descubre más
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+      </span>
     </div>
   </section>
 
@@ -1204,7 +1217,7 @@
     <div class="container">
       <div class="experience">
         <div>
-          <span class="eyebrow">Nuestra trayectoria</span>
+          <span class="eyebrow" style="color: var(--color-blush-light);">Nuestra trayectoria</span>
           <h2 id="experiencia-heading">Más de 7 años conectando Estados Unidos y Venezuela</h2>
           <p>Desde Maturín, hemos acompañado a numerosos clientes en sus compras e importaciones, además de ofrecer bisutería y accesorios cuidadosamente seleccionados.</p>
         </div>
