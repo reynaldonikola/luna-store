@@ -83,7 +83,9 @@
 
   document.getElementById('escena').src = escena;
   document.getElementById('detalle').textContent = detalle;
-  document.getElementById('precio').textContent = precio ? '$' + precio : '';
+  // n8n puede mandar el precio con o sin "$": se quita para no pintar "$$".
+  const importe = precio.replace(/^\s*\$\s*/, '');
+  document.getElementById('precio').textContent = importe ? '$' + importe : '';
 
   // El nombre se encoge por tramos para que nunca desborde ni se corte.
   const elNombre = document.getElementById('nombre');
@@ -91,13 +93,18 @@
   if (nombre.length > 34) elNombre.classList.add('muylargo');
   else if (nombre.length > 20) elNombre.classList.add('largo');
 
-  // Señal para el renderizador: la escena ya cargó.
+  // Señal para el renderizador: la escena ya cargó (o falló, y entonces no se publica).
   const img = document.getElementById('escena');
   window.listo = false;
-  if (img.complete) { window.listo = true; }
+  window.escenaRota = false;
+  const marcar = () => {
+    window.escenaRota = img.naturalWidth === 0;
+    window.listo = true;
+  };
+  if (img.complete) { marcar(); }
   else {
-    img.addEventListener('load', () => { window.listo = true; });
-    img.addEventListener('error', () => { window.listo = true; });
+    img.addEventListener('load', marcar);
+    img.addEventListener('error', marcar);
   }
 </script>
 </body>

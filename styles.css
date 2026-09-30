@@ -1253,7 +1253,8 @@ select:focus-visible {
   }
 }
 
-@media (max-width: 760px) {
+/* Collapse the nav before the six links + CTA stop fitting (~900px). */
+@media (max-width: 960px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -1277,7 +1278,9 @@ select:focus-visible {
   .main-nav.is-open {
     display: flex;
   }
+}
 
+@media (max-width: 760px) {
   .footer-grid {
     grid-template-columns: 1fr;
   }

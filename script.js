@@ -54,7 +54,8 @@
       }
 
       var matches = category === "all" || card.getAttribute("data-category") === category;
-      var isHidden = card.classList.contains("is-hidden");
+      // A card still fading out counts as hidden so a quick filter change brings it back.
+      var isHidden = card.classList.contains("is-hidden") || card.classList.contains("is-filtering-out");
 
       if (matches) {
         visibleCount += 1;
@@ -71,7 +72,7 @@
         card.classList.add("is-hidden");
       });
       toShow.forEach(function (card) {
-        card.classList.remove("is-hidden");
+        card.classList.remove("is-hidden", "is-filtering-out");
       });
     } else {
       toHide.forEach(function (card) {
@@ -196,6 +197,16 @@
     );
 
     revealTargets.forEach(function (el) {
+      // Once revealed, drop the animation so its `forwards` fill stops pinning
+      // opacity/transform and hover lifts + filter fades work again.
+      el.addEventListener("animationend", function onRevealEnd(event) {
+        if (event.target !== el || event.animationName !== "reveal-in") {
+          return;
+        }
+        el.removeEventListener("animationend", onRevealEnd);
+        el.classList.remove("reveal", "is-visible");
+        el.style.animationDelay = "";
+      });
       revealObserver.observe(el);
     });
   }
