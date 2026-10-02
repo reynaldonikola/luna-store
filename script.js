@@ -33,15 +33,67 @@
     updateHeaderState();
   }
 
-  /* ---------------- Catalog filter (smooth fade transition) ---------------- */
+  /* ---------------- Catalog filter: categoría + nombre + disponibilidad ---------------- */
   var filterButtons = Array.prototype.slice.call(document.querySelectorAll(".filter-btn"));
   var productCards = Array.prototype.slice.call(document.querySelectorAll(".product-card"));
   var noResults = document.getElementById("no-results");
   var catalogCount = document.getElementById("catalog-count");
+  var searchInput = document.getElementById("catalog-search");
+  var searchClear = document.getElementById("search-clear");
+  var stockToggle = document.getElementById("only-available");
   var totalProducts = productCards.length;
   var filterTimers = new WeakMap();
 
-  function applyFilter(category) {
+  var activeCategory = "all";
+  var activeQuery = "";
+  var onlyAvailable = false;
+
+  // Sin tildes y en minúsculas: quien escribe "bisuteria" encuentra "bisutería".
+  function normalizar(texto) {
+    var t = String(texto).toLowerCase();
+    if (String.prototype.normalize) {
+      t = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+    return t.replace(/\s+/g, " ").trim();
+  }
+
+  // El texto buscable de cada tarjeta se calcula una sola vez.
+  productCards.forEach(function (card) {
+    var nombre = card.querySelector("h3");
+    var detalle = card.querySelector(".product-body p");
+    var partes = [
+      nombre ? nombre.textContent : "",
+      detalle ? detalle.textContent : "",
+      card.getAttribute("data-sku") || "",
+      card.getAttribute("data-category") || ""
+    ];
+    card.dataset.buscable = normalizar(partes.join(" "));
+  });
+
+  function coincide(card) {
+    if (activeCategory !== "all" && card.getAttribute("data-category") !== activeCategory) {
+      return false;
+    }
+    if (onlyAvailable && card.getAttribute("data-state") !== "disponible") {
+      return false;
+    }
+    if (activeQuery && card.dataset.buscable.indexOf(activeQuery) === -1) {
+      return false;
+    }
+    return true;
+  }
+
+  function mensajeVacio() {
+    if (activeQuery) {
+      return "No encontramos nada con ese nombre. Prueba con otra palabra o escríbenos por WhatsApp y te lo buscamos.";
+    }
+    if (onlyAvailable) {
+      return "Ahora mismo no hay nada disponible en esta categoría. Lo que viene en camino se puede apartar con antelación.";
+    }
+    return "No hay productos en esta categoría por ahora. Escríbenos por Instagram, quizás lo tengamos disponible para pedido especial.";
+  }
+
+  function applyFilter() {
     var visibleCount = 0;
     var toHide = [];
     var toShow = [];
@@ -53,7 +105,7 @@
         filterTimers.delete(card);
       }
 
-      var matches = category === "all" || card.getAttribute("data-category") === category;
+      var matches = coincide(card);
       var isHidden = card.classList.contains("is-hidden");
 
       if (matches) {
@@ -91,6 +143,7 @@
     }
 
     if (noResults) {
+      noResults.textContent = mensajeVacio();
       noResults.classList.toggle("is-visible", visibleCount === 0);
     }
 
@@ -106,9 +159,60 @@
         btn.setAttribute("aria-pressed", "false");
       });
       button.setAttribute("aria-pressed", "true");
-      applyFilter(button.getAttribute("data-filter"));
+      activeCategory = button.getAttribute("data-filter");
+      applyFilter();
     });
   });
+
+  if (searchInput) {
+    var debounce;
+    searchInput.addEventListener("input", function () {
+      if (searchClear) {
+        searchClear.hidden = searchInput.value === "";
+      }
+      window.clearTimeout(debounce);
+      debounce = window.setTimeout(function () {
+        activeQuery = normalizar(searchInput.value);
+        applyFilter();
+      }, 120);
+    });
+
+    // Enter no envía nada: el catálogo ya está filtrado mientras escribe.
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+      }
+      if (event.key === "Escape" && searchInput.value) {
+        event.preventDefault();
+        limpiarBusqueda();
+      }
+    });
+  }
+
+  function limpiarBusqueda() {
+    if (!searchInput) {
+      return;
+    }
+    searchInput.value = "";
+    activeQuery = "";
+    if (searchClear) {
+      searchClear.hidden = true;
+    }
+    applyFilter();
+    searchInput.focus();
+  }
+
+  if (searchClear) {
+    searchClear.addEventListener("click", limpiarBusqueda);
+  }
+
+  if (stockToggle) {
+    stockToggle.addEventListener("click", function () {
+      onlyAvailable = !onlyAvailable;
+      stockToggle.setAttribute("aria-pressed", String(onlyAvailable));
+      applyFilter();
+    });
+  }
 
   /* ---------------- FAQ accordion ---------------- */
   var faqItems = Array.prototype.slice.call(document.querySelectorAll(".faq-item"));

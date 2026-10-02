@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Luna Store | Catálogo de fragancias, accesorios y ropa — Maturín</title>
-<meta name="description" content="Catálogo de Luna Store (Maturín, Venezuela): 53 productos con foto y precio — fragancias Victoria's Secret, carteras, relojes, ropa y calzado originales, más importaciones a pedido desde Estados Unidos." />
+<meta name="description" content="Catálogo de Luna Store (Maturín, Venezuela): 58 productos con foto y precio — fragancias Victoria's Secret, carteras, relojes, ropa y calzado originales, más importaciones a pedido desde Estados Unidos." />
 <meta name="theme-color" content="#0a1920" />
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/web/favicon-32.png" />
@@ -15,7 +15,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Luna Store — Catálogo completo de productos originales" />
-<meta property="og:description" content="53 productos con foto y precio: fragancias Victoria's Secret, carteras, relojes, ropa y calzado. Entrega en Maturín e importación desde Estados Unidos." />
+<meta property="og:description" content="58 productos con foto y precio: fragancias Victoria's Secret, carteras, relojes, ropa y calzado. Entrega en Maturín e importación desde Estados Unidos." />
 <meta property="og:image" content="https://reynaldonikola.github.io/luna-store/assets/logo/web/logo-full@2x.png" />
 <meta property="og:image:alt" content="Logotipo de Luna Store" />
 <meta property="og:locale" content="es_VE" />
@@ -26,7 +26,7 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Luna Store — Catálogo completo de productos originales" />
-<meta name="twitter:description" content="53 productos con foto y precio. Entrega en Maturín e importación desde Estados Unidos." />
+<meta name="twitter:description" content="58 productos con foto y precio. Entrega en Maturín e importación desde Estados Unidos." />
 <meta name="twitter:image" content="https://reynaldonikola.github.io/luna-store/assets/logo/web/logo-full@2x.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -183,6 +183,27 @@
         <p>Variedad de productos originales con foto y precio en dólares. Algunos están disponibles en Maturín y otros vienen en camino, con sistema de apartado para que no te quedes sin el tuyo. Y si buscas algo que no está aquí, traemos tus productos favoritos bajo encargo desde Estados Unidos.</p>
       </div>
 
+      <div class="catalog-tools">
+
+        <div class="search-field">
+
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+
+          <input type="search" id="catalog-search" class="search-input" placeholder="Buscar por nombre…" aria-label="Buscar un producto por nombre" aria-controls="product-grid" autocomplete="off" />
+
+          <button type="button" class="search-clear" id="search-clear" aria-label="Borrar la búsqueda" hidden>
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+
+          </button>
+
+        </div>
+
+        <button class="stock-toggle" type="button" id="only-available" aria-pressed="false">Disponible ahora</button>
+
+      </div>
+
+
       <div class="filter-bar" role="group" aria-label="Filtrar catálogo por categoría">
         <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Todos</button>
         <button class="filter-btn" type="button" data-filter="fragancias" aria-pressed="false">Fragancias</button>
@@ -192,11 +213,11 @@
         <button class="filter-btn" type="button" data-filter="calzado" aria-pressed="false">Calzado</button>
       </div>
 
-      <p class="catalog-count" id="catalog-count" aria-live="polite">Mostrando 53 de 53 productos</p>
+      <p class="catalog-count" id="catalog-count" aria-live="polite">Mostrando 58 de 58 productos</p>
 
       <div class="product-grid" id="product-grid">
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-AQUAKISS-VAC">
+        <article class="product-card" data-state="disponible" data-category="fragancias" data-sku="VS-AQUAKISS-VAC">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -213,7 +234,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-GINGHAMFRESH">
+        <article class="product-card" data-state="disponible" data-category="fragancias" data-sku="VS-GINGHAMFRESH">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -230,7 +251,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-LOVESPELL-SHIM">
+        <article class="product-card" data-state="disponible" data-category="fragancias" data-sku="VS-LOVESPELL-SHIM">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -247,7 +268,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-LOVESPELL-VAC">
+        <article class="product-card" data-state="disponible" data-category="fragancias" data-sku="VS-LOVESPELL-VAC">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -264,7 +285,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-PISTACHIOGLAZE">
+        <article class="product-card" data-state="disponible" data-category="fragancias" data-sku="VS-PISTACHIOGLAZE">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -281,7 +302,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-STRAWBERRYSODA">
+        <article class="product-card" data-state="disponible" data-category="fragancias" data-sku="VS-STRAWBERRYSODA">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -298,7 +319,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-VELVETPETALS-VAC">
+        <article class="product-card" data-state="disponible" data-category="fragancias" data-sku="VS-VELVETPETALS-VAC">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -315,7 +336,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-BANDOLERA-NAUTICA-BLANCA">
+        <article class="product-card" data-state="disponible" data-category="accesorios" data-sku="ACC-BANDOLERA-NAUTICA-BLANCA">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -332,7 +353,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-BANDOLERA-NAUTICA-ROJA">
+        <article class="product-card" data-state="disponible" data-category="accesorios" data-sku="ACC-BANDOLERA-NAUTICA-ROJA">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -349,7 +370,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-CARTERA-GUESS-NEGRA">
+        <article class="product-card" data-state="disponible" data-category="accesorios" data-sku="ACC-CARTERA-GUESS-NEGRA">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -366,7 +387,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-CARTERA-AK">
+        <article class="product-card" data-state="disponible" data-category="accesorios" data-sku="ACC-CARTERA-AK">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -383,7 +404,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-MONEDERO-NAUTICA-AZUL">
+        <article class="product-card" data-state="disponible" data-category="accesorios" data-sku="ACC-MONEDERO-NAUTICA-AZUL">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -400,7 +421,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="ropa" data-sku="ROPA-CAMISA-GUESS-DENIM-ROJA">
+        <article class="product-card" data-state="disponible" data-category="ropa" data-sku="ROPA-CAMISA-GUESS-DENIM-ROJA">
           <div class="product-media">
             <span class="product-tag">Ropa</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -417,7 +438,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="ropa" data-sku="ROPA-CAMISA-GUESS-LA81-GRIS">
+        <article class="product-card" data-state="disponible" data-category="ropa" data-sku="ROPA-CAMISA-GUESS-LA81-GRIS">
           <div class="product-media">
             <span class="product-tag">Ropa</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -434,7 +455,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="ropa" data-sku="ROPA-CAMISA-GUESS-ROSA">
+        <article class="product-card" data-state="disponible" data-category="ropa" data-sku="ROPA-CAMISA-GUESS-ROSA">
           <div class="product-media">
             <span class="product-tag">Ropa</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -451,7 +472,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="ropa" data-sku="ROPA-CAMISA-NAUTICA-AZUL">
+        <article class="product-card" data-state="disponible" data-category="ropa" data-sku="ROPA-CAMISA-NAUTICA-AZUL">
           <div class="product-media">
             <span class="product-tag">Ropa</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -468,7 +489,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="calzado" data-sku="CAL-MOCASINES-CK-75">
+        <article class="product-card" data-state="disponible" data-category="calzado" data-sku="CAL-MOCASINES-CK-75">
           <div class="product-media">
             <span class="product-tag">Calzado</span>
             <span class="product-state product-state--disponible">Disponible</span>
@@ -485,7 +506,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-AMBERROMANCE">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-AMBERROMANCE">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -502,7 +523,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-APPLEAPHRODISIAC">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-APPLEAPHRODISIAC">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -519,7 +540,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-AQUAKISS">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-AQUAKISS">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -536,7 +557,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-BAREVANILLA">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-BAREVANILLA">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -553,7 +574,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-CHERRYDESIRE">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-CHERRYDESIRE">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -570,7 +591,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-COCONUTPASSION">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-COCONUTPASSION">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -587,7 +608,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-ELIXIRNOCTURNE">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-ELIXIRNOCTURNE">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -604,7 +625,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-LOVESPELL">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-LOVESPELL">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -621,7 +642,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-MIDNIGHTBLOOM">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-MIDNIGHTBLOOM">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -638,7 +659,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-MYSTICSILK">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-MYSTICSILK">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -655,7 +676,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-PHANTOMVANILLA">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-PHANTOMVANILLA">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -672,7 +693,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-PURESEDUCTION">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-PURESEDUCTION">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -689,7 +710,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-PURESEDUCTION-WHIP">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-PURESEDUCTION-WHIP">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -706,7 +727,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-PURESEDUCTION-LOC">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-PURESEDUCTION-LOC">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -723,7 +744,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-SUEDEWONDER">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-SUEDEWONDER">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -740,7 +761,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-VELVETBOHEMIA">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-VELVETBOHEMIA">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -757,7 +778,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-VELVETPETALS">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-VELVETPETALS">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -774,7 +795,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="VS-VELVETPETALS-WHIP">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="VS-VELVETPETALS-WHIP">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -791,7 +812,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-LENTES-LEO-3">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-LENTES-LEO-3">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -808,7 +829,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-LENTES-LEO-5">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-LENTES-LEO-5">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -825,7 +846,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-LENTES">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-LENTES">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -842,7 +863,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-RELOJ-CURREN-ORO-CUAD">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-RELOJ-CURREN-ORO-CUAD">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -859,7 +880,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-RELOJ-CURREN">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-RELOJ-CURREN">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -876,7 +897,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-RELOJ-CURREN-PLATA-CUAD">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-RELOJ-CURREN-PLATA-CUAD">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -893,7 +914,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-RELOJ-CURREN-PLATA-RED">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-RELOJ-CURREN-PLATA-RED">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -910,7 +931,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-CORREAS-10">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-CORREAS-10">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -927,7 +948,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="accesorios" data-sku="ACC-CORREAS-15">
+        <article class="product-card" data-state="camino" data-category="accesorios" data-sku="ACC-CORREAS-15">
           <div class="product-media">
             <span class="product-tag">Accesorios</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -944,7 +965,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="calzado" data-sku="CAL-SNEAKERS-GUESS-7">
+        <article class="product-card" data-state="camino" data-category="calzado" data-sku="CAL-SNEAKERS-GUESS-7">
           <div class="product-media">
             <span class="product-tag">Calzado</span>
             <span class="product-state product-state--camino">En camino</span>
@@ -961,7 +982,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="FRA-CHAMPAGNE">
+        <article class="product-card" data-state="encargo" data-category="fragancias" data-sku="FRA-CHAMPAGNE">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -978,7 +999,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="FRA-PITAYA">
+        <article class="product-card" data-state="encargo" data-category="fragancias" data-sku="FRA-PITAYA">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -995,7 +1016,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="FRA-YARA">
+        <article class="product-card" data-state="encargo" data-category="fragancias" data-sku="FRA-YARA">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -1012,7 +1033,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="fragancias" data-sku="FRA-YOURETHEONE">
+        <article class="product-card" data-state="encargo" data-category="fragancias" data-sku="FRA-YOURETHEONE">
           <div class="product-media">
             <span class="product-tag">Fragancias</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -1029,7 +1050,88 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="bisuteria" data-sku="BIS-FOTOGRABADO">
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="PINK-JAMCOOKIE">
+          <div class="product-media">
+            <span class="product-tag">Fragancias</span>
+            <span class="product-state product-state--camino">En camino</span>
+            <img src="assets/catalogo/pink-jamcookie.jpg" alt="PINK Jam Cookie" loading="lazy" decoding="async" width="800" height="1000" />
+          </div>
+          <div class="product-body">
+            <h3>PINK Jam Cookie</h3>
+            <p>Body mist en spray de 250 ml. Almendra, frambuesa y azúcar impalpable.</p>
+            <div class="product-meta">
+              <span class="product-price">$20</span>
+              <span class="product-availability">En camino</span>
+            </div>
+            <a class="product-cta" href="https://wa.me/584249533311?text=Hola%20Luna%20Store%2C%20me%20interesa%3A%20PINK%20Jam%20Cookie%20%28PINK-JAMCOOKIE%29" target="_blank" rel="noopener noreferrer">Pedir este producto</a>
+          </div>
+        </article>
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="PINK-WAFFLECONE">
+          <div class="product-media">
+            <span class="product-tag">Fragancias</span>
+            <span class="product-state product-state--camino">En camino</span>
+            <img src="assets/catalogo/pink-wafflecone.jpg" alt="PINK Waffle Cone" loading="lazy" decoding="async" width="800" height="1000" />
+          </div>
+          <div class="product-body">
+            <h3>PINK Waffle Cone</h3>
+            <p>Body mist en spray de 250 ml, edición limitada. Vainilla cremosa, barquillo crujiente y notas dulces.</p>
+            <div class="product-meta">
+              <span class="product-price">$20</span>
+              <span class="product-availability">En camino</span>
+            </div>
+            <a class="product-cta" href="https://wa.me/584249533311?text=Hola%20Luna%20Store%2C%20me%20interesa%3A%20PINK%20Waffle%20Cone%20%28PINK-WAFFLECONE%29" target="_blank" rel="noopener noreferrer">Pedir este producto</a>
+          </div>
+        </article>
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="PINK-BISCOTTIDELIGHT">
+          <div class="product-media">
+            <span class="product-tag">Fragancias</span>
+            <span class="product-state product-state--camino">En camino</span>
+            <img src="assets/catalogo/pink-biscottidelight.jpg" alt="PINK Biscotti Delight" loading="lazy" decoding="async" width="800" height="1000" />
+          </div>
+          <div class="product-body">
+            <h3>PINK Biscotti Delight</h3>
+            <p>Body mist en spray de 250 ml. Pistacho dulce, azúcar rosa y glaseado de vainilla.</p>
+            <div class="product-meta">
+              <span class="product-price">$20</span>
+              <span class="product-availability">En camino</span>
+            </div>
+            <a class="product-cta" href="https://wa.me/584249533311?text=Hola%20Luna%20Store%2C%20me%20interesa%3A%20PINK%20Biscotti%20Delight%20%28PINK-BISCOTTIDELIGHT%29" target="_blank" rel="noopener noreferrer">Pedir este producto</a>
+          </div>
+        </article>
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="PINK-THISKISS">
+          <div class="product-media">
+            <span class="product-tag">Fragancias</span>
+            <span class="product-state product-state--camino">En camino</span>
+            <img src="assets/catalogo/pink-thiskiss.jpg" alt="PINK Love Shimmer This Kiss" loading="lazy" decoding="async" width="800" height="1000" />
+          </div>
+          <div class="product-body">
+            <h3>PINK Love Shimmer This Kiss</h3>
+            <p>Body mist con destellos, 250 ml. Pastel de migas, azúcar de canela y llovizna de vainilla.</p>
+            <div class="product-meta">
+              <span class="product-price">$20</span>
+              <span class="product-availability">En camino</span>
+            </div>
+            <a class="product-cta" href="https://wa.me/584249533311?text=Hola%20Luna%20Store%2C%20me%20interesa%3A%20PINK%20Love%20Shimmer%20This%20Kiss%20%28PINK-THISKISS%29" target="_blank" rel="noopener noreferrer">Pedir este producto</a>
+          </div>
+        </article>
+        <article class="product-card" data-state="camino" data-category="fragancias" data-sku="PINK-BLUECRUSH">
+          <div class="product-media">
+            <span class="product-tag">Fragancias</span>
+            <span class="product-state product-state--camino">En camino</span>
+            <img src="assets/catalogo/pink-bluecrush.jpg" alt="PINK Blue Crush" loading="lazy" decoding="async" width="800" height="1000" />
+          </div>
+          <div class="product-body">
+            <h3>PINK Blue Crush</h3>
+            <p>Body mist en spray de 250 ml. Baya jugosa, flor de hielo y crema de vainilla helada.</p>
+            <div class="product-meta">
+              <span class="product-price">$20</span>
+              <span class="product-availability">En camino</span>
+            </div>
+            <a class="product-cta" href="https://wa.me/584249533311?text=Hola%20Luna%20Store%2C%20me%20interesa%3A%20PINK%20Blue%20Crush%20%28PINK-BLUECRUSH%29" target="_blank" rel="noopener noreferrer">Pedir este producto</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-state="encargo" data-category="bisuteria" data-sku="BIS-FOTOGRABADO">
           <div class="product-media">
             <span class="product-tag">Bisutería</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -1046,7 +1148,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="bisuteria" data-sku="BIS-PANDORA">
+        <article class="product-card" data-state="encargo" data-category="bisuteria" data-sku="BIS-PANDORA">
           <div class="product-media">
             <span class="product-tag">Bisutería</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -1063,7 +1165,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="bisuteria" data-sku="BIS-OJOTURCO">
+        <article class="product-card" data-state="encargo" data-category="bisuteria" data-sku="BIS-OJOTURCO">
           <div class="product-media">
             <span class="product-tag">Bisutería</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -1080,7 +1182,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="bisuteria" data-sku="BIS-ROSARIOS">
+        <article class="product-card" data-state="encargo" data-category="bisuteria" data-sku="BIS-ROSARIOS">
           <div class="product-media">
             <span class="product-tag">Bisutería</span>
             <span class="product-state product-state--encargo">Por encargo</span>
@@ -1375,6 +1477,10 @@
     </div>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/584249533311?text=Hola%20Luna%20Store%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener noreferrer" aria-label="Escribir a Luna Store por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.07s.89 2.4 1.02 2.57c.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+</a>
 
 <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>

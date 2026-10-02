@@ -1189,7 +1189,8 @@ select:focus-visible {
 .back-to-top {
   position: fixed;
   right: 24px;
-  bottom: 24px;
+  /* deja libre la esquina para el botón de WhatsApp */
+  bottom: 86px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -1318,6 +1319,131 @@ select:focus-visible {
 
 
 /* ---------------- Catálogo: precio, estado y CTA por producto ---------------- */
+
+/* ---------------- Buscador y disponibilidad ---------------- */
+.catalog-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 280px;
+  max-width: 380px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  width: 18px;
+  height: 18px;
+  color: #5a6771;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 44px 12px 46px;
+  border-radius: 999px;
+  border: 2px solid var(--color-cream-dark);
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  /* 16px exactos: por debajo, iOS hace zoom al tocar el campo */
+  font-size: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-input::placeholder {
+  color: #8a949c;
+}
+
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 4px rgba(31, 74, 94, 0.12);
+}
+
+.search-clear {
+  position: absolute;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #5a6771;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* el atributo hidden tiene que ganarle al display:flex de arriba */
+.search-clear[hidden] {
+  display: none;
+}
+
+.search-clear:hover {
+  background: var(--color-cream-dark);
+  color: var(--color-ink);
+}
+
+.search-clear svg {
+  width: 15px;
+  height: 15px;
+}
+
+.stock-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 2px solid var(--color-navy);
+  background: transparent;
+  color: var(--color-navy);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.stock-toggle::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2f7a5a;
+}
+
+.stock-toggle[aria-pressed="true"] {
+  background: var(--color-navy);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.stock-toggle[aria-pressed="true"]::before {
+  background: var(--color-gold-light);
+}
 
 .catalog-count {
   text-align: center;
@@ -1492,4 +1618,36 @@ select:focus-visible {
 .hero-inner { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: reduce) {
   .hero .aurora span { animation: none; }
+}
+
+/* ---------------- WhatsApp siempre a mano ---------------- */
+.wa-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25d366;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px -8px rgba(37, 211, 102, 0.6);
+  z-index: 95;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.wa-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -10px rgba(37, 211, 102, 0.7);
+}
+
+.wa-float:active {
+  transform: scale(0.94);
+}
+
+.wa-float svg {
+  width: 29px;
+  height: 29px;
 }
