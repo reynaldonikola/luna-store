@@ -45,7 +45,7 @@
   var filterTimers = new WeakMap();
 
   var activeCategory = "all";
-  var activeQuery = "";
+  var activeQuery = [];
   var onlyAvailable = false;
 
   // Sin tildes y en minúsculas: quien escribe "bisuteria" encuentra "bisutería".
@@ -57,17 +57,42 @@
     return t.replace(/\s+/g, " ").trim();
   }
 
+  // Nombre visible de cada categoría, tomado de su propio botón: así el buscador
+  // encuentra "perfume de dama" y no solo el identificador "perfume-dama".
+  var nombreCategoria = {};
+  filterButtons.forEach(function (btn) {
+    nombreCategoria[btn.getAttribute("data-filter")] = btn.textContent;
+  });
+
   // El texto buscable de cada tarjeta se calcula una sola vez.
   productCards.forEach(function (card) {
     var nombre = card.querySelector("h3");
     var detalle = card.querySelector(".product-body p");
+    var categoria = card.getAttribute("data-category") || "";
     var partes = [
       nombre ? nombre.textContent : "",
       detalle ? detalle.textContent : "",
       card.getAttribute("data-sku") || "",
-      card.getAttribute("data-category") || ""
+      categoria,
+      nombreCategoria[categoria] || ""
     ];
     card.dataset.buscable = normalizar(partes.join(" "));
+  });
+
+  // Una categoría sin productos no se enseña. Cuando Luisannie suba el primero,
+  // su botón aparece solo, sin tocar nada aquí.
+  filterButtons = filterButtons.filter(function (btn) {
+    var filtro = btn.getAttribute("data-filter");
+    if (filtro === "all") {
+      return true;
+    }
+    var hay = productCards.some(function (card) {
+      return card.getAttribute("data-category") === filtro;
+    });
+    if (!hay) {
+      btn.remove();
+    }
+    return hay;
   });
 
   function coincide(card) {
@@ -77,14 +102,18 @@
     if (onlyAvailable && card.getAttribute("data-state") !== "disponible") {
       return false;
     }
-    if (activeQuery && card.dataset.buscable.indexOf(activeQuery) === -1) {
-      return false;
+    // Se exige cada palabra por separado, no la frase entera: así "perfume de
+    // dama" encuentra la categoría "Perfumes de dama".
+    for (var i = 0; i < activeQuery.length; i += 1) {
+      if (card.dataset.buscable.indexOf(activeQuery[i]) === -1) {
+        return false;
+      }
     }
     return true;
   }
 
   function mensajeVacio() {
-    if (activeQuery) {
+    if (activeQuery.length) {
       return "No encontramos nada con ese nombre. Prueba con otra palabra o escríbenos por WhatsApp y te lo buscamos.";
     }
     if (onlyAvailable) {
@@ -172,7 +201,8 @@
       }
       window.clearTimeout(debounce);
       debounce = window.setTimeout(function () {
-        activeQuery = normalizar(searchInput.value);
+        var texto = normalizar(searchInput.value);
+        activeQuery = texto ? texto.split(" ") : [];
         applyFilter();
       }, 120);
     });
@@ -194,7 +224,7 @@
       return;
     }
     searchInput.value = "";
-    activeQuery = "";
+    activeQuery = [];
     if (searchClear) {
       searchClear.hidden = true;
     }
