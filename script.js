@@ -74,7 +74,9 @@
       detalle ? detalle.textContent : "",
       card.getAttribute("data-sku") || "",
       categoria,
-      nombreCategoria[categoria] || ""
+      nombreCategoria[categoria] || "",
+      // la bisutería va partida en cuatro; quien busque "bisutería" las sigue encontrando todas
+      ["cadenas", "pulseras", "zarcillos", "anillos"].indexOf(categoria) !== -1 ? "bisutería" : ""
     ];
     card.dataset.buscable = normalizar(partes.join(" "));
   });
