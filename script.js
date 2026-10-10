@@ -64,19 +64,24 @@
     nombreCategoria[btn.getAttribute("data-filter")] = btn.textContent;
   });
 
+  // Un producto puede estar en varias secciones a la vez: data-category="accesorios carteras".
+  function categorias(card) {
+    return (card.getAttribute("data-category") || "").split(/\s+/).filter(Boolean);
+  }
+
   // El texto buscable de cada tarjeta se calcula una sola vez.
   productCards.forEach(function (card) {
     var nombre = card.querySelector("h3");
     var detalle = card.querySelector(".product-body p");
-    var categoria = card.getAttribute("data-category") || "";
+    var cats = categorias(card);
     var partes = [
       nombre ? nombre.textContent : "",
       detalle ? detalle.textContent : "",
       card.getAttribute("data-sku") || "",
-      categoria,
-      nombreCategoria[categoria] || "",
+      cats.join(" "),
+      cats.map(function (c) { return nombreCategoria[c] || ""; }).join(" "),
       // la bisutería va partida en cuatro; quien busque "bisutería" las sigue encontrando todas
-      ["cadenas", "pulseras", "zarcillos", "anillos"].indexOf(categoria) !== -1 ? "bisutería" : ""
+      cats.some(function (c) { return ["cadenas", "pulseras", "zarcillos", "anillos"].indexOf(c) !== -1; }) ? "bisutería" : ""
     ];
     card.dataset.buscable = normalizar(partes.join(" "));
   });
@@ -89,7 +94,7 @@
       return true;
     }
     var hay = productCards.some(function (card) {
-      return card.getAttribute("data-category") === filtro;
+      return categorias(card).indexOf(filtro) !== -1;
     });
     if (!hay) {
       btn.remove();
@@ -98,7 +103,7 @@
   });
 
   function coincide(card) {
-    if (activeCategory !== "all" && card.getAttribute("data-category") !== activeCategory) {
+    if (activeCategory !== "all" && categorias(card).indexOf(activeCategory) === -1) {
       return false;
     }
     if (onlyAvailable && card.getAttribute("data-state") !== "disponible") {
