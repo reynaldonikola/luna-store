@@ -81,7 +81,7 @@
       cats.join(" "),
       cats.map(function (c) { return nombreCategoria[c] || ""; }).join(" "),
       // la bisutería va partida en cuatro; quien busque "bisutería" las sigue encontrando todas
-      cats.some(function (c) { return ["cadenas", "pulseras", "zarcillos", "anillos"].indexOf(c) !== -1; }) ? "bisutería" : ""
+      cats.some(function (c) { return ["cadenas", "pulseras", "zarcillos", "earcuffs", "anillos"].indexOf(c) !== -1; }) ? "bisutería" : ""
     ];
     card.dataset.buscable = normalizar(partes.join(" "));
   });
