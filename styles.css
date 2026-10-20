@@ -1504,6 +1504,11 @@ select:focus-visible {
   color: var(--color-navy);
 }
 
+.product-price--consultar {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
 .product-meta .product-availability {
   margin-bottom: 0;
   font-size: 0.78rem;
